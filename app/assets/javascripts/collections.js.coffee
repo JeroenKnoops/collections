@@ -3,7 +3,7 @@ window.Collections =
   Collections: {}
   Views: {}
   Routers: {}
-  init: -> alert 'Hello from Backbone!'
+  init: {}
 
 $(document).ready ->
   Collections.init()
