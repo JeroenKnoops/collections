@@ -50,7 +50,7 @@ Collections::Application.routes.draw do
 
   root :to => 'welcome#index'
   # support for direct links to backbone.js urls.
-  match '*path', to: 'welcome#index'
+  match '*path', :to => 'welcome#index'
   
   # See how all your routes lay out with "rake routes"
 
