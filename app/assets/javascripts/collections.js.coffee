@@ -3,7 +3,10 @@ window.Collections =
   Collections: {}
   Views: {}
   Routers: {}
-  init: {}
+  init: ->
+    new Collections.Routers.Items()
+    Backbone.history.start(pushState: true)
+	  
 
 $(document).ready ->
   Collections.init()

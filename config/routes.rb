@@ -1,5 +1,8 @@
 Collections::Application.routes.draw do
-  get "welcome/index"
+
+  scope "api" do
+    resources :items
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
