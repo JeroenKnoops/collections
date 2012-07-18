@@ -1,1 +1,1 @@
-<%= @navigation.get('category') %> > <%= @navigation.get('id') %>
+<%= @navigation.get('category') %> <span class="divider">/</span> <%= @navigation.get('id') %>

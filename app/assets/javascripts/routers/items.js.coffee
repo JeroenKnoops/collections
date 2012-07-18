@@ -11,7 +11,7 @@ class Collections.Routers.Items extends Backbone.Router
 
   index: ->
     index_view = new Collections.Views.ItemsIndex(collection: @collection)
-    navigation_view = new Collections.Views.Navigation(model: @navigation)
+    navigation_view = new Collections.Views.NavigationIndex(model: @navigation)
     $('#container').html(index_view.render().el)
     $('#navigation').html(navigation_view.render().el)
 	

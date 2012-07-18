@@ -3,14 +3,12 @@ class Collections.Views.NavigationIndex extends Backbone.View
   template: JST['navigation/navigation']
 
   initialize: ->
-    @collection.on('reset', @render, this)
-    @collection.on('change', @updateNavigation, this)
+    @model.on('change', @updateNavigation, this)
 
   render: ->
-    $(@el).html(@template())
-    @collection.each(@updateNavigation)
+    $(@el).html(@template(item: @model))
     this
 
   updateNavigation: (navigation) =>
     view = new Collections.Views.Navigation(model: navigation)
-    @$('#navigations').append(view.render().el)
+    @$('#navigations').html(view.render().el)
