@@ -8,4 +8,4 @@
 %body
   .container
     #navigation
-    #container= yield
+    = content_tag "div", yield, id: "container", data: {:items => Item.all}

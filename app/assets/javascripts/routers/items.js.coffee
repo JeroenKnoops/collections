@@ -5,19 +5,22 @@ class Collections.Routers.Items extends Backbone.Router
 
   initialize: ->
     @collection = new Collections.Collections.Items()
-    @collection.fetch()
+    @collection.reset($('#container').data('items'))
     @navigation = new Collections.Models.Navigation()
-    @navigation.set category: "index"
 
   index: ->
     index_view = new Collections.Views.ItemsIndex(collection: @collection)
     navigation_view = new Collections.Views.NavigationIndex(model: @navigation)
     $('#container').html(index_view.render().el)
     $('#navigation').html(navigation_view.render().el)
+    @navigation.start()
 	
   show: (id) ->
     item = @collection.get(id)
-    @navigation.update(item)
     view = new Collections.Views.ItemDetails(model: item)
+    if $('#item').size() == 0
+      @index(this)
+    @navigation.update(item)
     $('#item').html(view.render().el)
+    
   	
