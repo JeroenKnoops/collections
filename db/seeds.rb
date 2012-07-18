@@ -5,4 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Item.delete_all
 Item.create(:title => "TB-303", :description => "Een mooie acid bak", :brand => "Roland")
+Item.create(:title => "RS-7000", :description => "", :brand => "Yamaha")

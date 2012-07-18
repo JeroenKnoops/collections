@@ -1,0 +1,8 @@
+<h1>Details</h1>
+
+<p>
+  <%= @item.get('brand') %> - <%= @item.get('title') %>
+</p>
+<p>
+  <%= @item.get('description') %>
+</p>
