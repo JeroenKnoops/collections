@@ -1,6 +1,4 @@
 <h1>Item</h1>
-
-<ul id="items"></ul>
-
+<ul id="items" class="nav nav-pills nav-stacked"></ul>
 <hr>
 <div id="item"></div>

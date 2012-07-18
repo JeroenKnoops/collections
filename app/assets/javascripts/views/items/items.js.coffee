@@ -8,7 +8,8 @@ class Collections.Views.Item extends Backbone.View
   initialize: ->
     @model.on('change', @render, this)
     
-  showItem: ->
+  showItem: (event) ->
+    event.preventDefault()
     Backbone.history.navigate("items/#{@model.get('id')}", true)
 
   render: ->

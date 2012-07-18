@@ -1,1 +1,1 @@
-<%= @item.get('brand') %> <%= @item.get('title') %>
+<a href="#"><%= @item.get('brand') %> <%= @item.get('title') %></a>
