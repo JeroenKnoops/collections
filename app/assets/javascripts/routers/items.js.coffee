@@ -21,6 +21,7 @@ class Collections.Routers.Items extends Backbone.Router
     if $('#item').size() == 0
       @index(this)
     @navigation.update(item)
+    item.highlight()
     $('#item').html(view.render().el)
     
   	

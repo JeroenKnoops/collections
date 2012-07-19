@@ -1,4 +1,8 @@
-<h1>Item</h1>
-<ul id="items" class="nav nav-pills nav-stacked"></ul>
-<hr>
-<div id="item"></div>
+<div class="row-fluid">
+  <div class="span4">
+    <h1>Items</h1>
+    <ul id="items" class="nav nav-pills nav-stacked"></ul>
+  </div>
+  <div class="span8" id="item">
+  </div>
+</div>

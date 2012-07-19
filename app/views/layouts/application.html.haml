@@ -7,5 +7,17 @@
     %meta{ :name => "viewport", :content => "width=device-width", :'initial-scale' => "1.0" }
 %body
   .container
+    %h1 Verzamelingen - Synthesizers
     #navigation
-    = content_tag "div", yield, id: "container", data: {:items => Item.all}
+    .row-fluid
+      .span2
+        %ul.nav.nav-list
+          %li.nav-header
+            List header
+          %li.active
+            %a{:href => "#"}
+              Home
+          %li
+            %a{:href => "#"}
+              Test
+      = content_tag "div", yield, :id => "container", :class => "span10", :data => {:items => Item.all}
