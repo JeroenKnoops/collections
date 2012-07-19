@@ -1,5 +1,5 @@
-class Collections.Views.Navigation extends Backbone.View
-  template: JST['navigation/part']
+class Collections.Views.Breadcrumb extends Backbone.View
+  template: JST['breadcrumb/part']
   tagName: 'li'
   
   events:
@@ -13,5 +13,5 @@ class Collections.Views.Navigation extends Backbone.View
     Backbone.history.navigate("items/#{@model.get('id')}", true)
 
   render: ->
-    $(@el).html(@template(navigation: @model))
+    $(@el).html(@template(breadcrumb: @model))
     this

@@ -1,4 +1,4 @@
-class Collections.Routers.Items extends Backbone.Router
+class Collections.Routers.Collection extends Backbone.Router
   routes:
     '': 'index'
     'items/:id': 'show'
@@ -6,21 +6,21 @@ class Collections.Routers.Items extends Backbone.Router
   initialize: ->
     @collection = new Collections.Collections.Items()
     @collection.reset($('#container').data('items'))
-    @navigation = new Collections.Models.Navigation()
+    @breadcrumb = new Collections.Models.Breadcrumb()
 
   index: ->
     index_view = new Collections.Views.ItemsIndex(collection: @collection)
-    navigation_view = new Collections.Views.NavigationIndex(model: @navigation)
+    breadcrumb_view = new Collections.Views.BreadcrumbIndex(model: @breadcrumb)
     $('#container').html(index_view.render().el)
-    $('#navigation').html(navigation_view.render().el)
-    @navigation.start()
+    $('#breadcrumb').html(breadcrumb_view.render().el)
+    @breadcrumb.start()
 	
   show: (id) ->
     item = @collection.get(id)
     view = new Collections.Views.ItemDetails(model: item)
     if $('#item').size() == 0
       @index(this)
-    @navigation.update(item)
+    @breadcrumb.update(item)
     item.highlight()
     $('#item').html(view.render().el)
     

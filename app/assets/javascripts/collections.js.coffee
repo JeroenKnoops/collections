@@ -4,7 +4,7 @@ window.Collections =
   Views: {}
   Routers: {}
   init: ->
-    new Collections.Routers.Items()
+    new Collections.Routers.Collection()
     Backbone.history.start(pushState: true)
 	  
 

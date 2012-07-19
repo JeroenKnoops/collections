@@ -1,4 +1,4 @@
-class Collections.Models.Navigation extends Backbone.Model
+class Collections.Models.Breadcrumb extends Backbone.Model
   
   start: ->
     @set(category: "index", id: "")
